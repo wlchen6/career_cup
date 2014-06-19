@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+ 
+bool Unique(string str)
+{
+	bool b[256] = {0};
+	int len = str.length();
+	for (int i = 0; i < len; ++i)
+	{
+		int temp = str[i];
+		if (b[temp]) return false;
+		b[temp] = true;
+ 
+	}
+ 
+	return true;
+}
+ 
+ 
+ 
+int main()
+{
+	string str1 = "hello", str2 = "abcd";
+	cout <<Unique(str1) << " " << endl;
+	cout <<Unique(str2) << " " << endl;
+	return 0;
+}
